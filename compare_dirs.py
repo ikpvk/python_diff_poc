@@ -72,6 +72,8 @@ def walk_all(root):
     root = Path(root)
     for p in root.rglob("*"):
         rel = p.relative_to(root)
+        if ".git" in rel.parts:
+            continue
         yield rel if p.is_file() else rel / ""  # dirs get trailing /
 
 
@@ -79,8 +81,8 @@ def compare_dirs(dir1, dir2):
     p1, p2 = Path(dir1), Path(dir2)
     entries1 = set(walk_all(dir1))
     entries2 = set(walk_all(dir2))
-    json_files1 = {f.relative_to(p1) for f in p1.rglob("*.json")}
-    json_files2 = {f.relative_to(p2) for f in p2.rglob("*.json")}
+    json_files1 = {f.relative_to(p1) for f in p1.rglob("*.json") if ".git" not in f.relative_to(p1).parts}
+    json_files2 = {f.relative_to(p2) for f in p2.rglob("*.json") if ".git" not in f.relative_to(p2).parts}
 
     only_in_a = sorted(entries1 - entries2)
     only_in_b = sorted(entries2 - entries1)

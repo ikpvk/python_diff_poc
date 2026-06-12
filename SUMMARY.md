@@ -20,6 +20,7 @@ python compare_dirs.py <dir_a> <dir_b>
   - `├──`/`└──`/`│` for tree hierarchy
   - Dirs get trailing `/` in "Only in" sections
 - Print `"fully matched"` at top if no differences; `"mismatches found"` otherwise
+- Ignore `.git` directories and their contents (files and subdirs inside `.git` are skipped)
 - Zero external dependencies (stdlib only: `json`, `pathlib`, `sys`)
 
 ## Implementation
