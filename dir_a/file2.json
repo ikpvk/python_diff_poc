@@ -1,0 +1,9 @@
+{
+  "app": "myapp",
+  "version": "1.0.0",
+  "dependencies": {
+    "flask": "2.0.0",
+    "redis": "4.0.0"
+  },
+  "debug": false
+}

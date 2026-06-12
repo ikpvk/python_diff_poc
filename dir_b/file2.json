@@ -1,0 +1,11 @@
+{
+  "app": "myapp",
+  "version": "1.1.0",
+  "dependencies": {
+    "flask": "2.1.0",
+    "redis": "4.0.0",
+    "celery": "5.0.0"
+  },
+  "debug": true,
+  "log_level": "info"
+}

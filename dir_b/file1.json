@@ -1,0 +1,8 @@
+{
+  "name": "alice",
+  "age": 31,
+  "role": "senior developer",
+  "skills": ["python", "go", "rust", "kubernetes"],
+  "active": true,
+  "location": "remote"
+}

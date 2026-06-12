@@ -1,0 +1,7 @@
+{
+  "name": "alice",
+  "age": 30,
+  "role": "developer",
+  "skills": ["python", "go", "rust"],
+  "active": true
+}
