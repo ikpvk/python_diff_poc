@@ -13,7 +13,10 @@ def _strip_noise(s, noise):
     infix = "-" + noise + "-"
     if infix in s:
         i = s.find(infix)
-        s = s[:i] + s[i + len(infix) - 1:]  # collapse to single dash
+        if i == 0 or i + len(infix) >= len(s):
+            s = s[:i] + s[i + len(infix):]  # at boundary, remove entirely
+        else:
+            s = s[:i] + s[i + len(infix) - 1:]  # in middle, collapse to single dash
     if s.endswith("-" + noise):
         s = s[:-(len(noise) + 1)]
     return s
